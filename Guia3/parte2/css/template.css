@@ -1,0 +1,67 @@
+body {
+    background: #f4f4f4;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+#contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.app-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 24px 16px;
+    text-align: center;
+    width: 260px;
+    transition: box-shadow 0.2s;
+}
+
+.app-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.app-card h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #2d89c7;
+    
+}
+.app-card p {
+    font-size: 1em;
+    color: #2c2828;
+    line-height: 1.5;
+}
+
+.img {
+    display: block;
+    margin: 0 auto 16px auto;
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+.title {
+    color: #333;
+    font-size: 1.3em;
+    margin: 12px 0 6px 0;
+}
+
+.desc {
+    color: #666;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.precio {
+    color: #222;
+    background: #eaeaea;
+    border-radius: 6px;
+    padding: 6px 0;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    display: block;
+}
