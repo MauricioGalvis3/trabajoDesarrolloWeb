@@ -3,45 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>Ejemplo Bootstrap</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
 </head>
-<body class="p-4 bg-light">
-    <form id="formLogin" class="p-3 border rounded">
-        <input type="text" class="form-control mb-2" id="user" placeholder="Usuario">
-        <input type="password" class="form-control mb-2" id="password" placeholder="Contraseña">
-        <button type="submit" class="btn btn-primary w-100">Ingresar</button>
-    </form>
+<body class="bg-light">
 
-  <div class="container text-center">
-    <div class="row justify-content-center">
-      
-      <!-- Card MT-09 -->
+  <!-- Contenedor general -->
+  <div class="container py-5">
+
+    <!-- Sección de Login -->
+    <div class="row justify-content-center mb-5">
       <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
+        <div class="card shadow">
+          <div class="card-body">
+            <h4 class="text-center mb-3">Inicio de Sesión</h4>
+            <form id="formLogin">
+              <input type="text" class="form-control mb-3" id="user" placeholder="Usuario">
+              <input type="password" class="form-control mb-3" id="password" placeholder="Contraseña">
+              <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de Cards -->
+    <div class="text-center mb-4">
+      <h2>Modelos Disponibles</h2>
+      <p class="text-muted">Explora las motocicletas de la serie Yamaha MT</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Card MT-09 -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow" style="width: 18rem;">
           <img src="https://www.incolmotos-yamaha.com.co/wp-content/uploads/2025/02/Mt09_2024_gris_carrusel-1.png" class="card-img-top" alt="MT-09">
           <div class="card-body">
             <h5 class="card-title">MT-09</h5>
             <p class="card-text">La Yamaha MT-09 es una moto deportiva de alto rendimiento.</p>
-            <button class="btn btn-success" id="btnInfoMT09">Más información</button>
+            <button class="btn btn-success w-100" id="btnInfoMT09">Más información</button>
           </div>
         </div>
       </div>
 
       <!-- Card MT-07 -->
-      <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
+      <div class="col-md-4 mb-4">
+        <div class="card shadow" style="width: 18rem;">
           <img src="https://www.incolmotos-yamaha.com.co/wp-content/uploads/2019/05/mt07_griss.png" class="card-img-top" alt="MT-07">
           <div class="card-body">
             <h5 class="card-title">MT-07</h5>
             <p class="card-text">La Yamaha MT-07 es una moto versátil y ligera, ideal para ciudad.</p>
-            <button class="btn btn-success" id="btnInfoMT07">Más información</button>
+            <button class="btn btn-success w-100" id="btnInfoMT07">Más información</button>
           </div>
         </div>
       </div>
-
     </div>
   </div>
-  
+
   <!-- Modal -->
   <div class="modal fade" id="miModal" tabindex="-1">
     <div class="modal-dialog">
@@ -59,32 +78,33 @@
 
   <!-- Bootstrap Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
+    // Modal dinámico
     const modal = new bootstrap.Modal(document.getElementById('miModal'));
 
     document.getElementById('btnInfoMT09').addEventListener('click', () => {
-      document.getElementById('modalBody').textContent = "La MT-09 es potente y deportiva valor $62.000.000.";
+      document.getElementById('modalBody').textContent = "La MT-09 es potente y deportiva. Valor: $62.000.000.";
       modal.show();
     });
 
     document.getElementById('btnInfoMT07').addEventListener('click', () => {
-      document.getElementById('modalBody').textContent = "La MT-07 es ligera y perfecta para ciudad valor : $56.000.000.";
+      document.getElementById('modalBody').textContent = "La MT-07 es ligera y perfecta para ciudad. Valor: $56.000.000.";
       modal.show();
     });
-  </script>
-    <script>
-  const form = document.getElementById('formLogin');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const user = document.getElementById('user').value;
-    const pass = document.getElementById('password').value;
-    if (user === "admin" && pass === "1234") {
-      alert("Inicio de sesión exitoso");
-    } else {
-      alert("Credenciales incorrectas");
-    }
-  });
-</script>
 
+    // Validación de login
+    const form = document.getElementById('formLogin');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const user = document.getElementById('user').value;
+      const pass = document.getElementById('password').value;
+      if (user === "admin" && pass === "1234") {
+        alert("Inicio de sesión exitoso ✅");
+      } else {
+        alert("Credenciales incorrectas ❌");
+      }
+    });
+  </script>
 </body>
 </html>
